@@ -84,7 +84,7 @@ def train_and_evaluate(
             MODELS_DIR.mkdir(exist_ok=True)
             fname = name.lower().replace(" ", "_") + ".pkl"
             joblib.dump(model, MODELS_DIR / fname)
-            print(f"  Saved → models/{fname}")
+            print(f"  Saved -> models/{fname}")
 
     # Also save the scaler and label encoder separately
     return results

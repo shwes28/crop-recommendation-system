@@ -43,17 +43,17 @@ st.markdown("""
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
   :root {
-    --bg:       #0d1117;
-    --surface:  #161b22;
-    --surface2: #21262d;
-    --border:   #30363d;
-    --accent1:  #3fb950;
-    --accent2:  #58a6ff;
-    --accent3:  #f78166;
-    --accent4:  #d2a8ff;
-    --text:     #e6edf3;
-    --muted:    #8b949e;
-    --grad:     linear-gradient(135deg, #0d1117 0%, #161b22 50%, #0d1117 100%);
+    --bg:       #0a0f1d;
+    --surface:  #111827;
+    --surface2: #1e293b;
+    --border:   #334155;
+    --accent1:  #10b981;
+    --accent2:  #06b6d4;
+    --accent3:  #f59e0b;
+    --accent4:  #34d399;
+    --text:     #f9fafb;
+    --muted:    #94a3b8;
+    --grad:     linear-gradient(135deg, #0a0f1d 0%, #111827 50%, #0a0f1d 100%);
   }
 
   html, body, [class*="css"] {
@@ -74,24 +74,25 @@ st.markdown("""
 
   /* Hero banner */
   .hero-banner {
-    background: linear-gradient(135deg, #0d2818 0%, #0d1117 40%, #0d2035 100%);
-    border: 1px solid #30363d;
+    background: linear-gradient(135deg, #062b1a 0%, #0c1c2e 50%, #071913 100%);
+    border: 1px solid rgba(16, 185, 129, 0.25);
     border-radius: 16px;
     padding: 2.5rem 2.5rem;
     margin-bottom: 2rem;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 10px 30px -10px rgba(16, 185, 129, 0.15);
   }
   .hero-banner::before {
     content: '';
     position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-    background: radial-gradient(ellipse at 20% 50%, rgba(63,185,80,0.08) 0%, transparent 60%),
-                radial-gradient(ellipse at 80% 50%, rgba(88,166,255,0.06) 0%, transparent 60%);
+    background: radial-gradient(ellipse at 20% 50%, rgba(16,185,129,0.12) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 50%, rgba(245,158,11,0.08) 0%, transparent 60%);
   }
   .hero-title {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 2.6rem; font-weight: 700;
-    background: linear-gradient(90deg, #3fb950, #58a6ff, #d2a8ff);
+    background: linear-gradient(90deg, #10b981, #34d399, #f59e0b);
     -webkit-background-clip: text; -webkit-text-fill-color: transparent;
     margin: 0 0 0.4rem; line-height: 1.2;
   }
@@ -116,16 +117,17 @@ st.markdown("""
     border-radius: 14px;
     padding: 1.4rem 1.4rem;
     text-align: center;
-    transition: border-color 0.3s, box-shadow 0.3s;
+    transition: border-color 0.3s, box-shadow 0.3s, transform 0.2s;
   }
   .pred-card:hover {
     border-color: var(--accent1);
-    box-shadow: 0 0 24px rgba(63,185,80,0.12);
+    box-shadow: 0 0 24px rgba(16,185,129,0.2);
+    transform: translateY(-2px);
   }
   .pred-card.best {
-    border-color: var(--accent1);
-    background: linear-gradient(135deg, #0d2818 0%, #161b22 100%);
-    box-shadow: 0 0 30px rgba(63,185,80,0.15);
+    border-color: rgba(16,185,129,0.4);
+    background: linear-gradient(135deg, #072e1d 0%, #111827 100%);
+    box-shadow: 0 0 32px rgba(16,185,129,0.22);
   }
   .pred-emoji { font-size: 3.2rem; margin-bottom: 0.5rem; display: block; }
   .pred-crop  { font-family: 'Space Grotesk', sans-serif;
@@ -136,8 +138,8 @@ st.markdown("""
   .pred-badge {
     display: inline-block; padding: 0.25rem 0.8rem;
     border-radius: 20px; font-size: 0.82rem; font-weight: 600;
-    background: rgba(63,185,80,0.15); color: var(--accent1);
-    border: 1px solid rgba(63,185,80,0.3);
+    background: rgba(16,185,129,0.15); color: var(--accent1);
+    border: 1px solid rgba(16,185,129,0.3);
   }
 
   /* Section headers */
@@ -160,11 +162,12 @@ st.markdown("""
     border: 1px solid var(--border);
     border-radius: 10px;
     padding: 1rem;
-    transition: transform 0.2s, border-color 0.2s;
+    transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
   }
   .crop-info-card:hover {
     transform: translateY(-3px);
-    border-color: var(--accent2);
+    border-color: var(--accent1);
+    box-shadow: 0 4px 16px rgba(16,185,129,0.15);
   }
   .crop-icon { font-size: 1.8rem; margin-bottom: 0.3rem; }
   .crop-name { font-weight: 600; font-size: 0.92rem; color: var(--text); }
@@ -179,7 +182,7 @@ st.markdown("""
   .metric-label { font-size: 0.72rem; color: var(--muted);
                   text-transform: uppercase; letter-spacing: 0.05em; }
   .metric-value { font-size: 1.15rem; font-weight: 600;
-                  color: var(--accent2); font-family: 'Space Grotesk', sans-serif; }
+                  color: var(--accent1); font-family: 'Space Grotesk', sans-serif; }
 
   /* Tabs */
   button[data-baseweb="tab"] {
@@ -201,8 +204,8 @@ st.markdown("""
 
   /* Animated gradient border for best model */
   @keyframes glow {
-    0%, 100% { box-shadow: 0 0 20px rgba(63,185,80,0.2); }
-    50%       { box-shadow: 0 0 35px rgba(63,185,80,0.4); }
+    0%, 100% { box-shadow: 0 0 20px rgba(16,185,129,0.25); }
+    50%       { box-shadow: 0 0 35px rgba(16,185,129,0.45); }
   }
   .best-glow { animation: glow 2.5s ease-in-out infinite; }
 </style>
@@ -315,13 +318,13 @@ with st.sidebar:
     predict_btn = st.button("🚀 Recommend Crop", width='stretch', type="primary")
 
     st.markdown("""
-    <div style='margin-top:2rem; padding:1rem; background:#161b22;
-                border:1px solid #30363d; border-radius:10px;'>
-      <div style='font-size:0.78rem; color:#8b949e;'>
-        <b style='color:#e6edf3;'>📊 Dataset:</b> 2,200 farm records<br>
-        <b style='color:#e6edf3;'>🌱 Crops:</b> 22 crop types<br>
-        <b style='color:#e6edf3;'>🤖 Best Model:</b> Random Forest<br>
-        <b style='color:#e6edf3;'>🎯 Accuracy:</b> ~99.3%
+    <div style='margin-top:2rem; padding:1rem; background:#111827;
+                border:1px solid #334155; border-radius:10px;'>
+      <div style='font-size:0.78rem; color:#94a3b8;'>
+        <b style='color:#f9fafb;'>📊 Dataset:</b> 2,200 farm records<br>
+        <b style='color:#f9fafb;'>🌱 Crops:</b> 22 crop types<br>
+        <b style='color:#f9fafb;'>🤖 Best Model:</b> Random Forest<br>
+        <b style='color:#10b981;'>🎯 Accuracy:</b> ~99.3%
       </div>
     </div>
     """, unsafe_allow_html=True)
@@ -394,25 +397,25 @@ with tab1:
 
     with info_col:
         st.markdown(f"""
-        <div style="background:#161b22; border:1px solid #30363d; border-radius:14px;
+        <div style="background:#111827; border:1px solid #334155; border-radius:14px;
                     padding:1.5rem; height:100%;">
-          <div style="font-size:0.8rem; color:#8b949e; text-transform:uppercase;
+          <div style="font-size:0.8rem; color:#94a3b8; text-transform:uppercase;
                       letter-spacing:0.06em; margin-bottom:1rem;">Crop Details</div>
           <div style="margin-bottom:0.8rem;">
-            <div style="color:#8b949e; font-size:0.75rem;">Season</div>
-            <div style="color:#e6edf3; font-weight:600;">{best_meta['season']}</div>
+            <div style="color:#94a3b8; font-size:0.75rem;">Season</div>
+            <div style="color:#f9fafb; font-weight:600;">{best_meta['season']}</div>
           </div>
           <div style="margin-bottom:0.8rem;">
-            <div style="color:#8b949e; font-size:0.75rem;">Ideal pH Range</div>
-            <div style="color:#e6edf3; font-weight:600;">{best_meta['pH']}</div>
+            <div style="color:#94a3b8; font-size:0.75rem;">Ideal pH Range</div>
+            <div style="color:#f9fafb; font-weight:600;">{best_meta['pH']}</div>
           </div>
           <div style="margin-bottom:0.8rem;">
-            <div style="color:#8b949e; font-size:0.75rem;">Ideal Temperature</div>
-            <div style="color:#e6edf3; font-weight:600;">{best_meta['temp']}</div>
+            <div style="color:#94a3b8; font-size:0.75rem;">Ideal Temperature</div>
+            <div style="color:#f9fafb; font-weight:600;">{best_meta['temp']}</div>
           </div>
           <div>
-            <div style="color:#8b949e; font-size:0.75rem;">Input N–P–K</div>
-            <div style="color:#58a6ff; font-weight:600;">{N} – {P} – {K}</div>
+            <div style="color:#94a3b8; font-size:0.75rem;">Input N–P–K</div>
+            <div style="color:#10b981; font-weight:600;">{N} – {P} – {K}</div>
           </div>
         </div>
         """, unsafe_allow_html=True)
@@ -424,9 +427,9 @@ with tab1:
     # ── 3-model cards ──────────────────────────────────────────────────────────
     cols = st.columns(3)
     model_colors = {
-        "Random Forest": ("#3fb950", "🌳"),
-        "SVM":           ("#58a6ff", "🔵"),
-        "Naive Bayes":   ("#d2a8ff", "🟣"),
+        "Random Forest": ("#10b981", "🌳"),
+        "SVM":           ("#06b6d4", "⚡"),
+        "Naive Bayes":   ("#f59e0b", "📊"),
     }
     for col, (model_name, pred) in zip(cols, preds.items()):
         accent, icon = model_colors[model_name]
@@ -435,15 +438,15 @@ with tab1:
             st.markdown(f"""
             <div class="pred-card">
               <div style="font-size:0.72rem; color:{accent}; text-transform:uppercase;
-                          letter-spacing:0.08em; margin-bottom:0.5rem;">
+                          letter-spacing:0.08em; margin-bottom:0.5rem; font-weight:600;">
                 {icon} {model_name}
               </div>
               <div style="font-size:2.8rem;">{meta['emoji']}</div>
               <div class="pred-crop" style="text-transform:capitalize; margin:0.4rem 0;">
                 {pred['crop']}
               </div>
-              <div class="pred-badge" style="background:rgba(88,166,255,0.1);
-                           color:{accent}; border-color:rgba(88,166,255,0.2);">
+              <div class="pred-badge" style="background:{accent}1a;
+                           color:{accent}; border-color:{accent}40;">
                 {pred['confidence']*100:.1f}% confidence
               </div>
             </div>
@@ -461,27 +464,27 @@ with tab1:
         fig = go.Figure(go.Indicator(
             mode="gauge+number",
             value=conf,
-            number={"suffix": "%", "font": {"color": "#e6edf3", "size": 28}},
-            title={"text": mname, "font": {"color": "#8b949e", "size": 13}},
+            number={"suffix": "%", "font": {"color": "#f9fafb", "size": 28}},
+            title={"text": mname, "font": {"color": "#94a3b8", "size": 13}},
             gauge={
-                "axis":      {"range": [0, 100], "tickcolor": "#8b949e"},
+                "axis":      {"range": [0, 100], "tickcolor": "#94a3b8"},
                 "bar":       {"color": color},
-                "bgcolor":   "#21262d",
+                "bgcolor":   "#1e293b",
                 "borderwidth": 0,
                 "steps": [
-                    {"range": [0,  50],  "color": "#161b22"},
-                    {"range": [50, 80],  "color": "#1a2030"},
-                    {"range": [80, 100], "color": "#0d2818"},
+                    {"range": [0,  50],  "color": "#111827"},
+                    {"range": [50, 80],  "color": "#1e293b"},
+                    {"range": [80, 100], "color": "#062b1a"},
                 ],
                 "threshold": {
-                    "line": {"color": "#f78166", "width": 2},
+                    "line": {"color": "#f59e0b", "width": 2},
                     "thickness": 0.75, "value": 95,
                 },
             },
         ))
         fig.update_layout(
             height=220, margin={"t": 40, "b": 10, "l": 20, "r": 20},
-            paper_bgcolor="#0d1117", font_color="#e6edf3",
+            paper_bgcolor="#0a0f1d", font_color="#f9fafb",
         )
         with gcol:
             st.plotly_chart(fig, width='stretch')
@@ -498,18 +501,18 @@ with tab1:
         x=[p * 100 for p in probs_top],
         y=[c.capitalize() for c in crops_top],
         orientation="h",
-        marker_color=["#3fb950" if c == best_crop else "#30363d" for c in crops_top],
-        marker_line_color="#21262d",
+        marker_color=["#10b981" if c == best_crop else "#1e293b" for c in crops_top],
+        marker_line_color="#334155",
         marker_line_width=1,
         text=[f"{p*100:.1f}%" for p in probs_top],
         textposition="outside",
-        textfont={"color": "#e6edf3", "size": 11},
+        textfont={"color": "#f9fafb", "size": 11},
     ))
     fig_bar.update_layout(
-        title={"text": "Top-8 Crop Probabilities", "font": {"color": "#e6edf3", "size": 14}},
-        xaxis={"title": "Probability (%)", "color": "#8b949e", "gridcolor": "#30363d"},
-        yaxis={"color": "#e6edf3", "autorange": "reversed"},
-        paper_bgcolor="#0d1117", plot_bgcolor="#161b22",
+        title={"text": "Top-8 Crop Probabilities", "font": {"color": "#f9fafb", "size": 14}},
+        xaxis={"title": "Probability (%)", "color": "#94a3b8", "gridcolor": "#1e293b"},
+        yaxis={"color": "#f9fafb", "autorange": "reversed"},
+        paper_bgcolor="#0a0f1d", plot_bgcolor="#111827",
         height=320, margin={"t": 50, "b": 30, "l": 10, "r": 80},
         showlegend=False,
     )
@@ -588,8 +591,8 @@ with tab2:
         title=f"{x_feat.capitalize()} vs {y_feat.capitalize()}",
     )
     fig_scatter.update_layout(
-        paper_bgcolor="#0d1117", plot_bgcolor="#161b22",
-        font_color="#e6edf3",
+        paper_bgcolor="#0a0f1d", plot_bgcolor="#111827",
+        font_color="#f9fafb",
     )
     st.plotly_chart(fig_scatter, width='stretch')
 
@@ -633,9 +636,9 @@ with tab3:
     # Metric cards
     mc1, mc2, mc3 = st.columns(3)
     model_accent = {
-        "Random Forest": "#3fb950",
-        "SVM":           "#58a6ff",
-        "Naive Bayes":   "#d2a8ff",
+        "Random Forest": "#10b981",
+        "SVM":           "#06b6d4",
+        "Naive Bayes":   "#f59e0b",
     }
     for col, (mname, res) in zip([mc1, mc2, mc3], results.items()):
         ac = model_accent[mname]
@@ -644,20 +647,20 @@ with tab3:
             rec  = res["report"]["weighted avg"]["recall"]    * 100
             f1   = res["report"]["weighted avg"]["f1-score"]  * 100
             st.markdown(f"""
-            <div style="background:#161b22; border:1px solid {ac}33;
+            <div style="background:#111827; border:1px solid {ac}40;
                         border-radius:14px; padding:1.5rem; text-align:center;">
               <div style="color:{ac}; font-size:0.78rem; text-transform:uppercase;
-                          letter-spacing:0.08em; margin-bottom:0.8rem;">{mname}</div>
+                          letter-spacing:0.08em; margin-bottom:0.8rem; font-weight:600;">{mname}</div>
               <div style="font-size:2.5rem; font-weight:700; font-family:Space Grotesk,sans-serif;
-                          color:#e6edf3;">{res['accuracy']*100:.2f}%</div>
-              <div style="color:#8b949e; font-size:0.8rem; margin-bottom:1rem;">Test Accuracy</div>
+                          color:#f9fafb;">{res['accuracy']*100:.2f}%</div>
+              <div style="color:#94a3b8; font-size:0.8rem; margin-bottom:1rem;">Test Accuracy</div>
               <div style="display:flex; justify-content:space-around; font-size:0.82rem;">
-                <div><div style="color:#8b949e">CV Acc</div>
-                     <div style="color:#e6edf3;font-weight:600;">{res['cv_mean']*100:.2f}%</div></div>
-                <div><div style="color:#8b949e">Precision</div>
-                     <div style="color:#e6edf3;font-weight:600;">{prec:.2f}%</div></div>
-                <div><div style="color:#8b949e">F1-Score</div>
-                     <div style="color:#e6edf3;font-weight:600;">{f1:.2f}%</div></div>
+                <div><div style="color:#94a3b8">CV Acc</div>
+                     <div style="color:#f9fafb;font-weight:600;">{res['cv_mean']*100:.2f}%</div></div>
+                <div><div style="color:#94a3b8">Precision</div>
+                     <div style="color:#f9fafb;font-weight:600;">{prec:.2f}%</div></div>
+                <div><div style="color:#94a3b8">F1-Score</div>
+                     <div style="color:#f9fafb;font-weight:600;">{f1:.2f}%</div></div>
               </div>
             </div>
             """, unsafe_allow_html=True)
@@ -667,7 +670,7 @@ with tab3:
     # Radar chart comparison
     st.markdown("#### 📡 Model Metrics Radar")
     categories   = ["Accuracy", "Precision", "Recall", "F1-Score", "CV Score"]
-    radar_colors = ["#3fb950", "#58a6ff", "#d2a8ff"]
+    radar_colors = ["#10b981", "#06b6d4", "#f59e0b"]
     fig_radar    = go.Figure()
 
     for (mname, res), color in zip(results.items(), radar_colors):
@@ -691,15 +694,15 @@ with tab3:
     fig_radar.update_layout(
         polar={
             "radialaxis": {"visible": True, "range": [85, 102],
-                           "color": "#8b949e", "gridcolor": "#30363d"},
-            "angularaxis": {"color": "#8b949e", "gridcolor": "#30363d"},
-            "bgcolor": "#161b22",
+                           "color": "#94a3b8", "gridcolor": "#334155"},
+            "angularaxis": {"color": "#94a3b8", "gridcolor": "#334155"},
+            "bgcolor": "#111827",
         },
-        paper_bgcolor="#0d1117", font_color="#e6edf3",
-        legend={"font": {"color": "#e6edf3"}},
+        paper_bgcolor="#0a0f1d", font_color="#f9fafb",
+        legend={"font": {"color": "#f9fafb"}},
         height=420,
         title={"text": "All Models — Weighted Metrics",
-               "font": {"color": "#e6edf3", "size": 14}},
+               "font": {"color": "#f9fafb", "size": 14}},
     )
     st.plotly_chart(fig_radar, width='stretch')
 
@@ -766,7 +769,7 @@ with tab4:
                       <div class="crop-range">📅 {meta['season']}</div>
                       <div class="crop-range">🌡️ {meta['temp']}</div>
                       <div class="crop-range">⚗️ pH {meta['pH']}</div>
-                      <hr style="border-color:#30363d; margin:0.5rem 0;">
+                      <hr style="border-color:#334155; margin:0.5rem 0;">
                       <div class="crop-range">N: {stats['N']:.0f} | P: {stats['P']:.0f} | K: {stats['K']:.0f}</div>
                       <div class="crop-range">Humidity: {stats['humidity']:.0f}%</div>
                       <div class="crop-range">Rainfall: {stats['rainfall']:.0f} mm</div>
@@ -798,7 +801,7 @@ with tab4:
         radar_labels  = ["Nitrogen", "Phosphorus", "Potassium",
                          "Temperature", "Humidity", "Rainfall"]
         fig_cr = go.Figure()
-        palette = ["#3fb950","#58a6ff","#d2a8ff","#ffa657","#f78166"]
+        palette = ["#10b981", "#06b6d4", "#f59e0b", "#34d399", "#818cf8"]
         for crop, color in zip(selected_crops, palette):
             if crop in crop_stats.index:
                 row  = crop_stats.loc[crop]
@@ -816,14 +819,14 @@ with tab4:
         fig_cr.update_layout(
             polar={
                 "radialaxis": {"visible": True, "range": [0, 100],
-                               "color": "#8b949e", "gridcolor": "#30363d"},
-                "angularaxis": {"color": "#e6edf3", "gridcolor": "#30363d"},
-                "bgcolor": "#161b22",
+                               "color": "#94a3b8", "gridcolor": "#334155"},
+                "angularaxis": {"color": "#f9fafb", "gridcolor": "#334155"},
+                "bgcolor": "#111827",
             },
-            paper_bgcolor="#0d1117", font_color="#e6edf3",
-            legend={"font": {"color": "#e6edf3"}},
+            paper_bgcolor="#0a0f1d", font_color="#f9fafb",
+            legend={"font": {"color": "#f9fafb"}},
             height=450,
             title={"text": "Normalised Crop Profile Comparison",
-                   "font": {"color": "#e6edf3", "size": 14}},
+                   "font": {"color": "#f9fafb", "size": 14}},
         )
         st.plotly_chart(fig_cr, width='stretch')
